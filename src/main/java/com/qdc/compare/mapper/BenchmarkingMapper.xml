@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qdc.compare.mapper.BenchmarkingMapper" >
+
+    <insert id="saveInfo">
+        insert into benchmarking values (null ,#{companyName},#{salesAmount},#{year},#{business},#{priority},
+        #{disadvantage},#{status},#{emp_count},#{createTime},#{simpleDesc})
+    </insert>
+
+    <select id="getAmountList" resultType="com.qdc.compare.bean.Benchmarking">
+        select id,company_name companyName,sales_amount salesAmount
+        from benchmarking
+        where year=#{year}
+    </select>
+</mapper>
